@@ -47,28 +47,7 @@
             </button>
             <a class="navbar-brand" href="index.html">Mirkoonline</a>
         </div>
-        <!-- Top Menu Items -->
-        <!--<ul class="nav navbar-right top-nav">-->
-        <!--<li class="dropdown">-->
-        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b-->
-        <!--class="caret"></b></a>-->
-        <!--<ul class="dropdown-menu">-->
-        <!--<li>-->
-        <!--<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>-->
-        <!--</li>-->
-        <!--<li>-->
-        <!--<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>-->
-        <!--</li>-->
-        <!--<li class="divider"></li>-->
-        <!--<li>-->
-        <!--<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>-->
-        <!--</li>-->
-        <!--</ul>-->
-        <!--</li>-->
-        <!--</ul>-->
+
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
@@ -76,13 +55,10 @@
                     <a href="index.html"><i class="fa fa-fw fa-area-chart"></i> Mirkoonline bot</a>
                 </li>
                 <li>
-                    <a href="wykop_addon.html"><i class="fa fa-fw fa-code"></i> Wykop addon</a>
+                    <a href="addons.html"><i class="fa fa-fw fa-code"></i> Inne</a>
                 </li>
                 <li class="active">
                     <a href="api_mirkoonline.html"><i class="fa fa-fw fa-gears"></i> API Mirkoonline</a>
-                </li>
-                <li>
-                    <a href="other.html"><i class="fa fa-fw fa-tasks"></i> Inne</a>
                 </li>
             </ul>
         </div>
@@ -95,22 +71,154 @@
 
             <!-- Page Heading -->
             <div class="row">
+
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         API
                     </h1>
-                    <div class="panel-body">
-                        <a href="http://35.160.50.195:8080/entries/last/mirkoonline?callback=myCallback">http://35.160.50.195:8080/entries/last/mirkoonline?callback=myCallback</a>
-                        - ostatni wpis licznika<br/>
-                        <a href="http://35.160.50.195:8080/entries/mirkoonline?callback=myCallback">http://35.160.50.195:8080/entries/mirkoonline?callback=myCallback</a>
-                        - historia wpisów licznika (max 2000 najnowszych wpisów)<br/>
-                        <a href="http://35.160.50.195:8080/entries/mirkoonline/1442256714242?callback=myCallback">http://35.160.50.195:8080/entries/mirkoonline/1442256714242?callback=myCallback</a>
-                        - historia wpisów licznika od daty podanej w formacie timestamp (max 2000 najnowszych
-                        wpisów)<br/>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Aktualny adres serwera</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-12">
+                                http://35.160.50.195:8080
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Ostatni wpis licznika</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-2">
+                                <b>URL:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                /entries/last/mirkoonline?callback=myCallback
+                            </p></div>
+
+                            <div class="col-lg-2">
+                                <b>Zwraca:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                Obiekt typu:
+                            </p>
+                                <p>
+                                    {<br/>
+                                    &emsp;"id": "586d4ce1e4b070164b37f0a5",<br/>
+                                    &emsp;"key": "mirkoonline",<br/>
+                                    &emsp;"value": "2156",<br/>
+                                    &emsp;"date":1483558113344<br/>
+                                    }
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <b>Gdzie:</b>
+                            </div>
+                            <div class="col-lg-10">
+                                <p><b>id</b>: ID w bazie danych</p>
+                                <p><b>key</b>: nazwa bota</p>
+                                <p><b>value</b>: liczba aktywnych użytkowników mikrobloga</p>
+                                <p><b>date</b>: data w formacie UTC timestamp</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Historia wpisów licznika</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-2">
+                                <b>URL:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                /entries/mirkoonline?callback=myCallback
+                            </p></div>
+
+                            <div class="col-lg-2">
+                                <b>Zwraca:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                Tablicę obiektów typu:
+                            </p>
+                                <p>
+                                    {<br/>
+                                    &emsp;"id": "586d4ce1e4b070164b37f0a5",<br/>
+                                    &emsp;"key": "mirkoonline",<br/>
+                                    &emsp;"value": "2156",<br/>
+                                    &emsp;"date":1483558113344<br/>
+                                    }
+                                </p>
+                                <p>
+                                    Max 2000 wpisów
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <b>Gdzie:</b>
+                            </div>
+                            <div class="col-lg-10">
+                                <p><b>id</b>: ID w bazie danych</p>
+                                <p><b>key</b>: nazwa bota</p>
+                                <p><b>value</b>: liczba aktywnych użytkowników mikrobloga</p>
+                                <p><b>date</b>: data w formacie UTC timestamp</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">Historia wpisów licznika od daty podanej jako UTC timestamp</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-2">
+                                <b>URL:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                /entries/mirkoonline/1442256714242?callback=myCallback
+                            </p></div>
+
+                            <div class="col-lg-2">
+                                <b>Zwraca:</b>
+                            </div>
+                            <div class="col-lg-10"><p>
+                                Tablicę obiektów typu:
+                            </p>
+                                <p>
+                                    {<br/>
+                                    &emsp;"id": "586d4ce1e4b070164b37f0a5",<br/>
+                                    &emsp;"key": "mirkoonline",<br/>
+                                    &emsp;"value": "2156",<br/>
+                                    &emsp;"date":1483558113344<br/>
+                                    }
+                                </p>
+                                <p>
+                                    Max 2000 wpisów
+                                </p>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <b>Gdzie:</b>
+                            </div>
+                            <div class="col-lg-10">
+                                <p><b>id</b>: ID w bazie danych</p>
+                                <p><b>key</b>: nazwa bota</p>
+                                <p><b>value</b>: liczba aktywnych użytkowników mikrobloga</p>
+                                <p><b>date</b>: data w formacie UTC timestamp</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
         <!-- /.container-fluid -->
 
