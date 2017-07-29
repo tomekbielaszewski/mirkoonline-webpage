@@ -2,7 +2,7 @@ $(function () {
   function updateGraph() {
     var dayAgo = new Date().getTime() - (1000 * 60 * 60 * 48);
     $.ajax({
-      url: "http://35.160.50.195:8080/entries/mirkoonline/" + dayAgo,
+      url: "https://api.grizwold.pl:8443/entries/mirkoonline/" + dayAgo,
       dataType: "jsonp",
       success: function (mirkoonlineData) {
         var formattedData = [];
@@ -49,7 +49,7 @@ $(function () {
 
   function updateHeader() {
     $.ajax({
-      url: 'http://35.160.50.195:8080/entries/last/mirkoonline',
+      url: 'https://api.grizwold.pl:8443/entries/last/mirkoonline',
       dataType: 'jsonp',
       success: function (data) {
         $('#active_users').text(data.value);
